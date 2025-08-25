@@ -6,16 +6,8 @@
   return has-heading
 }
 
-#let textbox(body) = {
-  box[
-    #v(0.8em)
-    #body
-    #v(0.8em)
-  ]
-}
-
 #let codeblock(body) = {
-  textbox[
+  box()[
     #body
   ]
 }
@@ -48,11 +40,11 @@
   })
 
   v(2em)
-  align(center, heading(level: 3, numbering: none)[
-    #text(size: 16pt, font: "Noto Serif CJK SC")[
+  align(center)[
+    #text(size: 16pt, weight: "medium", font: "Noto Sans CJK SC")[
       习题
     ]
-  ])
+  ]
   par()[#text()[#h(0.0em)]]
   body
 }
