@@ -106,6 +106,13 @@
   },
 )
 
+#show box: it => {
+  v(0.3em)
+  it
+  v(-1em)
+  linebreak()
+}
+
 #include "introduction.typ"
 #pagebreak()
 
@@ -128,6 +135,7 @@
 }
 
 #show heading.where(level: 2): it => {
+  par()[#text()[#h(0.0em)]]
   align(center)[
     #set text(size: 12pt)
     #it
@@ -141,7 +149,7 @@
     #par()[#text()[#h(0.0em)]]
     #counter(heading).display()
     #text(weight: "medium")[#it.body]
-    #par()[#text()[#h(0.0em)]]
+
   ]
 }
 
