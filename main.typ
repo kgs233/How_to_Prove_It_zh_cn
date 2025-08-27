@@ -153,4 +153,6 @@
   ]
 }
 
+#set strong(delta: 200)
+
 #include "Chapter1/chapter1.typ"

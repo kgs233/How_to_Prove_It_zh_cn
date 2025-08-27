@@ -1,0 +1,8 @@
+replace "not "
+with "not "
+
+replace "and"
+with "and"
+
+replace "or"
+with "or"
