@@ -21,6 +21,22 @@
   text("  ")
 }
 
+#let question(name, body) = [
+  === #name
+  #v(0.5em)
+  #body
+  #v(0.5em)
+]
+
+#let solution(body) = [
+  #set par(first-line-indent: 0em)
+  _解_
+  #v(0.5em)
+  #body
+  #par()[#text()[#h(0.0em)]]
+  #v(-0.5em)
+]
+
 #let proof(body) = {
   [
     #linebreak()
