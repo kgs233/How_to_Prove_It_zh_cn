@@ -25,7 +25,8 @@
   === #name
   #v(0.5em)
   #body
-  #v(0.5em)
+  #par()[#text()[#h(0.0em)]]
+  #v(-1em)
 ]
 
 #let solution(body) = [
