@@ -10,7 +10,7 @@
       ]
       #block[
         #text(size: 17pt, weight: "medium")[
-          一种结构化的方法，第二版
+          一种结构化的方法，第三版
         ]
       ]
 

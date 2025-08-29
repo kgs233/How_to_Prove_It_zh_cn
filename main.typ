@@ -33,7 +33,13 @@
   if it.level == 1 { v(4em) }
 }
 
-#show figure.caption.where(body: []): it => it.supplement + [ ] + context it.counter.display()
+#set figure(numbering: it =>{
+  str(counter(heading.where(level: 1)).get().first()) + "."  + str(it)
+})
+#show figure.caption.where(body: []): it => [
+  #it.supplement
+  #context it.counter.display()
+]
 
 #let han-or-punct = "[-\p{sc=Hani}。．，、：；！‼？⁇⸺——……⋯⋯～–—·・‧/／「」『』“”‘’（）《》〈〉【】〖〗〔〕［］｛｝＿﹏●•]"
 #show regex(han-or-punct + " " + han-or-punct): it => {
@@ -132,6 +138,10 @@
   ]
   par()[#text()[#h(0.0em)]]
   v(9em)
+  let kinds = query(figure).map(fig => fig.kind).dedup()
+  for kind in kinds {
+    counter(figure.where(kind: kind)).update(0)
+  }
 }
 
 #show heading.where(level: 2): it => {
