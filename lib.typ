@@ -1,4 +1,5 @@
 #import "@preview/hydra:0.6.2": *
+#import "@preview/numbly:0.1.0": numbly
 
 #let has-h1() = {
   let current-page = here().page()
@@ -21,7 +22,25 @@
   text("  ")
 }
 
+#let definition(name, body) = [
+  #set heading(numbering: numbly(
+    "{1}",
+    "{1}.{2}",
+    "定义 {1}.{2}.{3}.",
+  ))
+  === #name
+  #v(0.5em)
+  #body
+  #par()[#text()[#h(0.0em)]]
+  #v(-1em)
+]
+
 #let question(name, body) = [
+  #set heading(numbering: numbly(
+    "{1}",
+    "{1}.{2}",
+    "例题 {1}.{2}.{3}.",
+  ))
   === #name
   #v(0.5em)
   #body
