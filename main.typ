@@ -41,7 +41,7 @@
   #context it.counter.display()
 ]
 
-#let han-or-punct = "[-\p{sc=Hani}。．，、：；！‼？⁇⸺——……⋯⋯～–—·・‧/／「」『』“”‘’（）《》〈〉【】〖〗〔〕［］｛｝＿﹏●•]"
+#let han-or-punct = "[-\p{sc=Hani}。．，、：；！‼？⁇⸺——dots⋯⋯～–—·・‧/／「」『』“”‘’（）《》〈〉【】〖〗〔〕［］｛｝＿﹏●•]"
 #show regex(han-or-punct + " " + han-or-punct): it => {
   let (a, _, b) = it.text.clusters()
   a + b
@@ -127,7 +127,7 @@
 #set heading(numbering: numbly(
   "{1}",
   "{1}.{2}",
-  "例题 {1}.{2}.{3}."
+  "{1}.{2}.{3}."
 ))
 
 #show heading.where(level: 1): it => {

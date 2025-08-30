@@ -15772,7 +15772,7 @@ setAwithn+ 1 elements, then we remove one element, call ita, fromA, and
 ```
 More Examples 283
 ```
-apply the inductive hypothesis to the remaining setA±=A\{a}. This will give
+apply the inductive hypothesis to the remaining setA±=A{a}. This will give
 us a total orderT±onA±, and to complete the proof we must somehow turn
 this into a total orderT onAsuch thatR⊆T. The relationT±already tells us
 how to compare any two elements ofA±, but it doesn’t tell us how to compare
@@ -15991,7 +15991,7 @@ use the same notation here as in the example.)
     6.2.2. (Hint: Use induction on the number of elements inB. For the
     induction step, assume the conclusion holds for any setB ⊆Awithn
     elements, and supposeB is a subset ofAwithn+ 1 elements. Letbbe
-    any element ofBand letB±= B\{b}, a subset ofAwithnelements. By
+    any element ofBand letB±= B{b}, a subset ofAwithnelements. By
     the inductive hypothesis, letT±be a partial order onAsuch thatR⊆T±
     and∀x∈B±∀y∈A(xT ±y∨yT±x). Now letA 1 = {x∈A|(x,b)∈T±}
     andA 2 = A\A 1 , and letT = T±∪(A 1 ×A 2 ). Prove thatT has all the
@@ -21669,10 +21669,10 @@ and_ |A∪B| = |A| + |B|_._
 
 _Proof._ Letn = |A| andm = |B|. ThenA ∼ InandB ∼ Im. Notice that
 ifx ∈Imthen 1 ≤ x ≤ m, and thereforen+ 1 ≤ x + n ≤ n+m, so
-x+n∈In+m\In. Thus we can define a functionf :Im→In+m\Inby the
+x+n∈In+min. Thus we can define a functionf :Im→In+minby the
 formulaf (x)= x+ n. It is easy to check thatf is one-to-one and onto, so
-Im∼In+m\In. SinceB ∼Im, it follows thatB ∼In+m\ In. Applying part
-2 of Theorem 8.1.2, we can conclude thatA∪B∼In∪(In+m\In)=In+m.
+Im∼In+min. SinceB ∼Im, it follows thatB ∼In+m\ In. Applying part
+2 of Theorem 8.1.2, we can conclude thatA∪B∼In∪(In+min)=In+m.
 ThereforeA∪Bis finite, and |A∪B| = n+m= |A| + |B|. ±
 
 ```
@@ -21883,7 +21883,7 @@ they be seated?
 ```
 *27. In this problem you will prove the _inclusion-exclusion principle_ , which
 generalizes the formulas in exercise 26. SupposeA 1 ,A 2 ,... ,Anare
-finite sets. LetP =P(In)\{∅}, and for eachS∈P letAS=
+finite sets. LetP =P(In){∅}, and for eachS∈P letAS=
 
 ### ³
 
@@ -22681,7 +22681,7 @@ x
 ```
 *10. LetE= {R|Ris an equivalence relation onZ+}.
 (a) Prove thatE²P(Z+).
-(b) LetA= Z+\{1, 2}and letPbe the set of all partitions ofZ+. Define
+(b) LetA= Z+{1, 2}and letPbe the set of all partitions ofZ+. Define
 f :P(A) → Pby the formulaf (X)= {X∪ {1},(A\ X)∪ {2}}.
 Prove thatf is one-to-one.
 (c) Prove thatE∼P(Z+).
@@ -24320,7 +24320,7 @@ transitivity ofRit follows that(u,q)∈R, so(x,z)∈S.
 (b) Letc 1 andc 2 be two distinct elements ofC. Supposeb ∈B. Let
 gandh be functions fromB toC such that∀x ∈B(g(x) = c 1 ),
 ∀x∈B\ {b}(h(x) = c 1 ), andh(b) = c 2. (Formally,g= B × {c 1 }
-andh= [(B\{b})×{c 1 }]∪{(b,c 2 )}.) Theng±= h, so by assumption
+andh= [(B{b})×{c 1 }]∪{(b,c 2 )}.) Theng±= h, so by assumption
 g◦f ±= h◦f, and therefore we can choose somea ∈Asuch that
 g(f (a)) ±= h(f (a)). But by the waygandhwere defined, the only
 x∈B for whichg(x) ±= h(x) isx= b, so it follows thatf (a) = b.
@@ -24685,7 +24685,7 @@ But then(x,y)∈R∩(A³× A³)= R³⊆T³⊆T.
        Induction step: Suppose thatn ≥ 1 and for everyB ⊆ A, ifB
     hasnelements then∃x∈B∀y ∈B((x,y) ∈R◦R). Now suppose
     thatB ⊆AandB hasn+ 1 elements. Choose someb∈B, and let
-    B³= B\{b}. ThenB³⊆AandB³hasnelements, so by the inductive
+    B³= B{b}. ThenB³⊆AandB³hasnelements, so by the inductive
     hypothesis there is somex ∈B³such that∀y∈B³((x,y)∈R◦R).
     We now consider two cases.
        Case 1:(x,b) ∈R◦R. Then∀y∈B((x,y)∈R◦R), so we are
@@ -26041,7 +26041,7 @@ f is anR-path fromatobof lengthn+ 1. Letc = f (n). Then
 
 ```
 Appendix 435
-f\{(n+ 1,b)}is anR-path fromatocof lengthn, so by the inductive
+f{(n+ 1,b)}is anR-path fromatocof lengthn, so by the inductive
 hypothesis(a,c)∈Rn. But also(c,b) = (f (n),f (n+ 1)) ∈R, so
 (a,b)∈R^1 ◦Rn= Rn+ 1.
 (b) This follows from part (a) and exercise 14.
@@ -26649,7 +26649,7 @@ f (i,j)=
 ```
 + 1 = n.
 ```
-15. (a) IfB\{f (m)|m∈Z+,m < n} =∅thenB ⊆ {f (m)|m∈Z+,m <
+15. (a) IfB{f (m)|m∈Z+,m < n} =∅thenB ⊆ {f (m)|m∈Z+,m <
     n}, so by exercises 8 and 10,Bis finite. But we assumed thatBwas
     infinite, so this is impossible.
 
@@ -26711,7 +26711,7 @@ ThenB= ∅, soA× B= ∅and |A×B| = 0 = |A| · 0.
 Induction step: Letnbe an arbitrary natural number, and suppose
 that for all finite setsAandB, if |B| = nthenA× B is finite and
 |A×B| = |A|·n. Now supposeAandBare finite sets and |B| =n+ 1.
-Choose an elementb∈B, and letB³= B\{b}, a set withnelements.
+Choose an elementb∈B, and letB³= B{b}, a set withnelements.
 ThenA×B =A×(B³∪{b})=(A×B³)∪(A×{b}), and sinceb /∈B³,
 A×B³andA×{b}are disjoint. By the inductive hypothesis,A×B³is
 finite and |A×B³| = |A|·n. Also, it is not hard to see thatA∼A×{b}
@@ -26727,7 +26727,7 @@ pie}. So the number of meals is |A×B| = |A| · |B| = 5 · 3 = 15.
     conclusion holds forn. Now letAbe a set withn+ 1 elements, and
     letF = {f |f is a one-to-one, onto function fromIn+ 1toA}. Let
     g:In+ 1→ Abe a one-to-one, onto function. For eachi∈In+ 1, let
-    Ai= A\{g(i)}, a set withnelements, and letFi= {f |fis a one-to-
+    Ai= A{g(i)}, a set withnelements, and letFi= {f |fis a one-to-
     one, onto function fromIntoAi}. By the inductive hypothesis,Fiis
     finite and|Fi| = n!. Now letFi³= {f ∈F |f (n+ 1)= g(i)}. Define
     a functionh:Fi→Fi³by the formulah(f )= f ∪ {(n+ 1,g(i))}.
