@@ -13,7 +13,7 @@
 #set text(
   font: (
     "STIX Two Text",
-    "Noto Serif CJK SC",
+    "Noto Serif SC",
     "STIX Two Math",
   ),
   size: 11pt,
@@ -23,11 +23,11 @@
 
 #set par(justify: true, first-line-indent: 2em, leading: 1em)
 
-#show math.equation: set text(font: ("STIX Two Text", "Noto Serif CJK SC", "STIX Two Math"), size: 12pt)
+#show math.equation: set text(font: ("STIX Two Math","STIX Two Text", "Noto Serif SC"), size: 12pt)
 #show emph: text.with(font: ("STIX Two Text", "Kaiti", "STIX Two Math"), size: 12pt, weight: "medium")
 
 #show heading.where(level: 1): it => {
-  set text(font: "Noto Sans CJK SC", 1.5em, weight: "regular")
+  set text(font: "Noto Sans SC", 1.5em, weight: "regular")
   align(center)[#it]
   par()[#text()[#h(0.0em)]]
   if it.level == 1 { v(4em) }
@@ -132,7 +132,7 @@
 
 #show heading.where(level: 1): it => {
   align(center)[
-    #set text(font: "Noto Sans CJK SC")
+    #set text(font: "Noto Sans SC")
     #text(weight: "bold", 1.5em)[#counter(heading).display()] \
     #text(weight: "regular", 1.5em)[#it.body]
   ]
