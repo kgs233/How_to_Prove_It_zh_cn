@@ -77,7 +77,7 @@
 
   v(2em)
   align(center)[
-    #text(size: 16pt, weight: "medium", font: "Noto Sans CJK SC")[
+    #text(size: 16pt, weight: "medium", font: "Noto Sans SC")[
       习题
     ]
   ]
