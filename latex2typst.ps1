@@ -1,8 +1,9 @@
-$files = Get-ChildItem -Path ./ -Recurse -File | Where-Object { $_.Name -ne "latex2typst.ps1" } | Where-Object { $_.Name -ne "ref.md" } | Where-Object { $_.Name -ne "ref.pdf" }
+$files = Get-ChildItem -Path ./ -Recurse -File
+    | Where-Object { $_.Extension -eq ".typ" }
 
 foreach ($file in $files) {
     $content = Get-Content -Path $file.FullName
-
+    
     $content = $content -replace '\\in', 'in'
     $content = $content -replace '\\notin', 'in.not'
 

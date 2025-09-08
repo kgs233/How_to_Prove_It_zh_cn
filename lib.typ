@@ -35,11 +35,11 @@
   #v(-1em)
 ]
 
-#let question(name, body) = [
+#let example(name, body) = [
   #set heading(numbering: numbly(
     "{1}",
     "{1}.{2}",
-    "例题 {1}.{2}.{3}.",
+    "例 {1}.{2}.{3}.",
   ))
   === #name
   #v(0.5em)
