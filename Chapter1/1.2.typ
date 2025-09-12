@@ -108,33 +108,34 @@ $not P$ 的真值表也很容易构造，因为要使 $not P$ 为真，$P$ 必�
 #v(1em)
 #align(center)[
   #grid(
-  columns: 2,
-  column-gutter: 5em,
-  row-gutter: 1em,
-  [
-  #align(center)[步骤一]
-  #v(-1em)
-  #table(
-    columns: (2em, 2em, 6em),
-    table.header([$P$], [$Q$], [$not (P or not Q)$]),
-    [F], [F], [#h(0.8em)*F*#h(2em)*F*],
-    [F], [T], [#h(0.8em)*F*#h(2em)*T*],
-    [T], [F], [#h(0.8em)*T*#h(2em)*F*],
-    [T], [T], [#h(0.8em)*T*#h(2em)*T*],
+    columns: 2,
+    column-gutter: 5em,
+    row-gutter: 1em,
+    [
+      #align(center)[步骤一]
+      #v(-1em)
+      #table(
+        columns: (2em, 2em, 6em),
+        table.header([$P$], [$Q$], [$not (P or not Q)$]),
+        [F], [F], [#h(0.8em)*F*#h(2em)*F*],
+        [F], [T], [#h(0.8em)*F*#h(2em)*T*],
+        [T], [F], [#h(0.8em)*T*#h(2em)*F*],
+        [T], [T], [#h(0.8em)*T*#h(2em)*T*],
+      )
+    ],
+    [
+      #align(center)[步骤二]
+      #v(-1em)
+      #table(
+        columns: (2em, 2em, 6em),
+        table.header([$P$], [$Q$], [$not (P or not Q)$]),
+        [F], [F], [#h(0.8em)F#h(1.4em)*T* F],
+        [F], [T], [#h(0.8em)F#h(1.4em)*F* T],
+        [T], [F], [#h(0.8em)T#h(1.4em)*T* F],
+        [T], [T], [#h(0.8em)T#h(1.4em)*F* T],
+      )
+    ],
   )
-  ],
-  [
-  #align(center)[步骤二]
-  #v(-1em)
-  #table(
-    columns: (2em, 2em, 6em),
-    table.header([$P$], [$Q$], [$not (P or not Q)$]),
-    [F], [F], [#h(0.8em)F#h(1.4em)*T* F],
-    [F], [T], [#h(0.8em)F#h(1.4em)*F* T],
-    [T], [F], [#h(0.8em)T#h(1.4em)*T* F],
-    [T], [T], [#h(0.8em)T#h(1.4em)*F* T],
-  )
-  ])
   #figure(
     caption: [],
     grid(
@@ -350,16 +351,16 @@ $
 #solution[
   + $not (P or not Q)$
     $
-          "它等价于" #h(1em) & (not P or not not P) or P & #h(1em)"（德·摩根定理）。" \
-      "进一步等价于" #h(1em) & (not Q or P) or P         &  #h(1em)"（双重否定律）。"
+          "它等价于" #h(1em) & (not P or not not P) or P && #h(1em)"（德·摩根定理）。" \
+      "进一步等价于" #h(1em) & (not Q or P) or P         && #h(1em)"（双重否定律）。"
     $
     你可以通过为 $not P and Q$ 制作真值表来验证这个等价性，看看它是否与例 1.2.1 中 $not (P or not Q)$ 的真值表相同。
   + $not (Q and not P) or P$
     $
-          "它等价于" #h(1em) & (not Q or not not P) or P & #h(1em) "（德·摩根定理）。" \
-      "进一步等价于" #h(1em) & (not Q or P) or P         &  #h(1em) "（双重否定律）。" \
-      "进一步等价于" #h(1em) & not Q or (P or P)         &      #h(1em) "（结合律）。" \
-      "进一步等价于" #h(1em) & not Q or P                &      #h(1em) "（幂等律）。"
+          "它等价于" #h(1em) & (not Q or not not P) or P && #h(1em) "（德·摩根定理）。" \
+      "进一步等价于" #h(1em) & (not Q or P) or P         && #h(1em) "（双重否定律）。" \
+      "进一步等价于" #h(1em) & not Q or (P or P)         && #h(1em) "（结合律）。" \
+      "进一步等价于" #h(1em) & not Q or P                && #h(1em) "（幂等律）。"
     $
 ]
 
@@ -408,19 +409,19 @@ $
 #solution[
   + $P or ( Q and not P)$
     $
-      #h(6em)"等价于" & #h(1em) (P or Q) and (P or not P) #h(1em) & "（分配律）。" \
-       "进一步等价于" & #h(1em) P or Q #h(1em)                    & "（永真律）。"
+      #h(6em)"等价于" & #h(1em) (P or Q) and (P or not P) #h(1em) && "（分配律）。" \
+       "进一步等价于" & #h(1em) P or Q #h(1em)                    && "（永真律）。"
     $
     最后一步使用了 $P or not P$ 是永真式的事实。
   + $not (P or(Q and not R))and Q$
     $
-          "它等价于" & #h(1em) (not P and not (Q and not R)) and Q#h(1em)    & "（德摩根定律）"， \
-      "进一步等价于" & #h(1em) (not P and (not Q or not not R)) and Q#h(1em) & "（德摩根定律）"， \
-      "进一步等价于" & #h(1em) (not P and (not Q or R)) and Q#h(1em)         & "（双重否定律）"， \
-      "进一步等价于" & #h(1em) not P and ((not Q or R) and Q)#h(1em)         &     "（结合律）"， \
-      "进一步等价于" & #h(1em) not P and (Q and (not Q or R))#h(1em)         &     "（交换律）"， \
-      "进一步等价于" & #h(1em) not P and ((Q and not Q) or (Q and R))#h(1em) &     "（分配律）"， \
-        "最终等价于" & #h(1em) not P and (Q and R)#h(1em)                    &     "（矛盾律）"。
+          "它等价于" & #h(1em) (not P and not (Q and not R)) and Q#h(1em)    && "（德摩根定律）"， \
+      "进一步等价于" & #h(1em) (not P and (not Q or not not R)) and Q#h(1em) && "（德摩根定律）"， \
+      "进一步等价于" & #h(1em) (not P and (not Q or R)) and Q#h(1em)         && "（双重否定律）"， \
+      "进一步等价于" & #h(1em) not P and ((not Q or R) and Q)#h(1em)         && "（结合律）"， \
+      "进一步等价于" & #h(1em) not P and (Q and (not Q or R))#h(1em)         && "（交换律）"， \
+      "进一步等价于" & #h(1em) not P and ((Q and not Q) or (Q and R))#h(1em) && "（分配律）"， \
+        "最终等价于" & #h(1em) not P and (Q and R)#h(1em)                    && "（矛盾律）"。
     $
     最后一步使用了 $Q and not Q$ 是矛盾式的事实。最后，根据 $and$ 的结合律，我们可以去掉括号而不使公式产生歧义，因此原公式等价于 $not P and Q and R$。
 ]
