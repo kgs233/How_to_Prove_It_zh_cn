@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="580" height="420" viewBox="0 0 580 420">
+    <rect x="30" y="30" width="520" height="360" fill="none" stroke="#000" stroke-width="3" />
+    <text x="50" y="66"
+        style="font-family: STIX Two Math; font-size: 26px; font-style: italic; fill: black;font-weight: 600;">U</text>
+    <defs>
+        <circle id="A" cx="240" cy="160" r="70" stroke="black" stroke-width="2.5" />
+        <circle id="B" cx="340" cy="160" r="70" stroke="black" stroke-width="2.5" />
+        <circle id="C" cx="290" cy="250" r="70" stroke="black" stroke-width="2.5" />
+
+        <clipPath id="clipA">
+            <use href="#A" />
+        </clipPath>
+        <clipPath id="clipB">
+            <use href="#B" />
+        </clipPath>
+        <clipPath id="clipC">
+            <use href="#C" />
+        </clipPath>
+
+        <mask id="mask_noC">
+            <!-- 整体可见 -->
+            <rect x="0" y="0" width="580" height="420" fill="white" />
+            <!-- 在 C 区域画黑色以隐藏 C -->
+            <use href="#C" fill="black" />
+        </mask>
+
+        <mask id="mask_noB">
+            <rect x="0" y="0" width="580" height="420" fill="white" />
+            <use href="#B" fill="black" />
+        </mask>
+    </defs>
+
+    <!-- 三个圆的轮廓（仅描边，无填充） -->
+    <use href="#A" fill="none" stroke="#000" stroke-width="2" />
+    <use href="#B" fill="none" stroke="#000" stroke-width="2" />
+    <use href="#C" fill="none" stroke="#000" stroke-width="2" />
+
+    <!-- 着色 A∩B（用 B 填充并裁剪到 A 的区域），并用 mask 去掉与 C 的重叠 -->
+    <g clip-path="url(#clipA)" mask="url(#mask_noC)">
+        <use href="#B" fill="gray" fill-opacity="0.6" />
+    </g>
+
+    <!-- 着色 A∩C（用 C 填充并裁剪到 A 的区域），并用 mask 去掉与 B 的重叠 -->
+    <g clip-path="url(#clipA)" mask="url(#mask_noB)">
+        <use href="#C" fill="gray" fill-opacity="0.6" />
+    </g>
+
+    <!-- 圆标签（放在圆上方）-->
+    <text x="220" y="80"
+        style="font-family: STIX Two Math; font-size: 25px; font-style: italic; fill: black;font-weight: 580;">A</text>
+    <text x="330" y="80"
+        style="font-family: STIX Two Math; font-size: 25px; font-style: italic; fill: black;font-weight: 580;">B</text>
+    <text x="280" y="350"
+        style="font-family: STIX Two Math; font-size: 25px; font-style: italic; fill: black;font-weight: 580;">C</text>
+</svg>
