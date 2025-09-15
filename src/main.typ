@@ -23,7 +23,7 @@
 
 #set par(justify: true, first-line-indent: 2em, leading: 1em)
 
-#show math.equation: set text(font: ("STIX Two Math","STIX Two Text", "Noto Serif SC"), size: 12pt)
+#show math.equation: set text(font: ("STIX Two Math", "STIX Two Text", "Noto Serif SC"), size: 12pt)
 #show emph: text.with(font: ("STIX Two Text", "Kaiti", "STIX Two Math"), size: 12pt, weight: "medium")
 
 #show heading.where(level: 1): it => {
@@ -33,8 +33,8 @@
   if it.level == 1 { v(4em) }
 }
 
-#set figure(numbering: it =>{
-  str(counter(heading.where(level: 1)).get().first()) + "."  + str(it)
+#set figure(numbering: it => {
+  str(counter(heading.where(level: 1)).get().first()) + "." + str(it)
 })
 #show figure.caption.where(body: []): it => [
   #it.supplement
@@ -127,7 +127,7 @@
 #set heading(numbering: numbly(
   "{1}",
   "{1}.{2}",
-  "{1}.{2}.{3}."
+  "{1}.{2}.{3}.",
 ))
 
 #show heading.where(level: 1): it => {
