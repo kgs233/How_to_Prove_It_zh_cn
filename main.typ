@@ -41,7 +41,7 @@
   #context it.counter.display()
 ]
 
-#let han-or-punct = "[-\p{sc=Hani}。．，、：；！‼？⁇⸺——dots⋯⋯～–—·・‧/／「」『』“”‘’（）《》〈〉【】〖〗〔〕［］｛｝＿﹏●•]"
+#let han-or-punct = "[- \ \ \ \p{sc=Hani}。．，、：；！‼？⁇⸺——dots⋯⋯～–—·・‧/／「」『』“”‘’（）《》〈〉【】〖〗〔〕［］｛｝＿﹏●•]"
 #show regex(han-or-punct + " " + han-or-punct): it => {
   let (a, _, b) = it.text.clusters()
   a + b

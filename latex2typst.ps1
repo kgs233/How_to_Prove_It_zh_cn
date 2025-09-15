@@ -3,6 +3,7 @@ $files = Get-ChildItem -Path ./ -Recurse -File
 
 foreach ($file in $files) {
     $content = Get-Content -Path $file.FullName
+    $content = $content -replace '(?<! )\\', ' \'
     
     $content = $content -replace '\\in', 'in'
     $content = $content -replace '\\notin', 'in.not'
@@ -10,6 +11,8 @@ foreach ($file in $files) {
     $content = $content -replace '\\lor', 'or'
     $content = $content -replace '\\land', 'and'
     $content = $content -replace '\\lnot', 'not'
+
+    $content = $content -replace '\\neq', 'eq.not'
 
     $content = $content -replace '\\cap', 'inter'
     $content = $content -replace '\\cup', 'union'
@@ -22,6 +25,10 @@ foreach ($file in $files) {
 
     $content = $content -replace '\\{', '{'
     $content = $content -replace '\\}', '}'
+
+    $content = $content -replace '\\varnothing', 'emptyset'
+    $content = $content -replace '\\subseteq', 'subset.eq'
+
 
     $content = $content -replace '\\mathbb{([A-Za-z])}', '$1$1'
     $content = $content -replace '\\text\{([^\}]*)\}', '"$1"'
