@@ -167,7 +167,7 @@ $A without (B inter C) = (A without B) union (A without C)。$
 首先，我们把命题$x in (A union B) without (A inter B)$ 和$x in (A without B) union (B without A)$的逻辑形式写出来：
 
 $
-  x in (A union B) without (A inter B) & "的含义是：" (x in A or x in B) and not (x in A and x in B)； \
+    x in (A union B) without (A inter B) & "的含义是：" (x in A or x in B) and not (x in A and x in B)； \
   x in (A without B) union (B without A) & "的含义是：" (x in A and x in.not B) or (x in B and x in.not A)。
 $
 你现在可以使用第 1.2 节中的等值式来检验这些命题是等价的。
@@ -183,7 +183,127 @@ $
     [F], [F], [F], [F],
     [F], [T], [T], [T],
     [T], [F], [T], [T],
-    [T], [T], [F], [F]
+    [T], [T], [F], [F],
   ),
-  caption: []
+  caption: [],
 )<table1.7>
+
+#definition(
+  [假设 $A$ 和 $B$ 是集合。若 $A$ 的每个元素也是 $B$ 的元素，我们称 $A$ 是 $B$ 的子集。记号 $A subset.eq B$#footnote[$subset.eq$ 符号在一些地方还写作 $⫅$ 或者 $subset$，其中 $subset$ 可能会引起歧义，不过依照Unicode对这个符号解释，它应该是子集符号，又应为集合自己本身也是自己的子集，所以读者在大多数情况下都可以等同于前面两者] 表示 $A$ 是 $B$ 的子集。
+    如果 $A$ 和 $B$ 没有公共元素，我们称它们是不交的。注意，这等价于说它们的公共元素所成的集合是空集，换句话说，就是 $A inter B = emptyset$。],
+)[]
+#v(-1em)
+#example([假设
+  $A = {"red", "green"}$，
+  $B = {"red", "yellow", "green", "purple"}$，
+  $C = {"blue", "purple"}$。
+  那么，$A$ 的两个元素 red 和 green 也都在 $B$ 中，因此 $A subset.eq B$。
+  另外，$A inter C = emptyset$，所以 $A$ 和 $C$ 不交。])[]
+
+如果我们知道 $A emptyset B$，或者知道 $A$ 和 $B$ 不交，那么我们可以用不同的文氏图来表示 $A$ 和 $B$，以反映这一点。@venn-subset 和@venn-notsubset 说明了这一点。
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 2em,
+  row-gutter: 2em,
+  [#figure(image("../image/venn7.svg"), caption: [])<venn-subset>],
+  [#figure(image("../image/venn8.svg"), caption: [$A inter B$])<venn-notsubset>],
+)
+
+正如我们之前推导过一些恒等式，说明某些集合恒等相等，有时我们也可以证明某些集合恒不相交，或者一个集合恒为另一个集合的子集。
+例如，从文氏图中可以看出，集合 $A inter B$ 与 $A without B$ 互不重叠，因此对于任意集合 $A$ 和 $B$，它们总是不交的。
+另一种方法是写出命题 $x in (A inter B) inter (A without B)$ 的含义：
+$
+  x in (A inter B) inter (A without B) "的含义是" (x in A and x in B) and (x in A and x in.not B)， \
+  "同时等价于" x in A and (x in B and x in.not B)。
+$
+但是，最后这个命题显然是一个矛盾，因此命题 $x in (A inter B) inter (A without B)$ 无论对什么 $x$ 都总是假命题。
+换句话说，不可能有任何元素属于 $(A inter B) inter (A without B)$，因此必有$(A inter B) inter (A without B) = subset.eq。$
+所以，$A inter B$ 与 $A without B$ 是不交的。
+
+下一个定理给出了关于集合运算的另一个普遍事实。这个定理的证明说明了：我们一直在学习的演绎推理原理实际上确实应用在数学证明之中。
+
+#theorem([对任意集合 $A$ 和 $B$，有 $(A union B) without B subset.eq A$ 。])[]
+#v(-1em)
+#proof[
+  _证明._ 我们必须证明：如果某个元素属于 $(A union B) without B$，那么它也必定属于 $A$。
+  于是，假设 $x in (A union B) without B$。这意味着
+  $x in A union B$ 且 $x in.not B$，
+  换句话说，就是 $x in A or x in B$ 且 $x in.not B$。
+  注意到，这些命题的逻辑形式正是 $P or Q$ 与 $not Q$，而这正是我们在第 1.1 节的第一个演绎论证例子中出现的前提形式！正如我们在那个例子中看到的，由这些前提我们可以得出结论：$x in A$ 必为真。
+  因此，凡是属于 $(A union B) without B$ 的元素，也必定属于 $A$。
+  由此可得$(A union B) without B subset.eq A$ 。
+]
+
+你可能会认为，为理解定理 1.4.7 为什么成立，并不需要如此谨慎地应用逻辑律。集合 $(A union B) without B$ 可以被看作这样一个过程的结果：先从集合 $A$ 出发，把 $B$ 的元素加入，然后再把它们移除。常识会暗示结果应当仍是原来的集合 $A$；换言之，表面上看似 $(A union B) without B = A$。
+然而，正如你在练习 10 中被要求证明的那样，这一结论并不正确。这表明在数学中，不能让不精确的推理促使你仓促下结论。像我们在定理 1.4.7 的证明中那样，谨慎地应用逻辑律可以帮助你避免得出没有依据的结论。
+
+#exercises((1, 4, 9, 12, 14))[
+  + 设$A={1,3,12,35}, B={3,7,12,20}, C={x| x "是质数"}$。列出下列各集合的元素。下面的集合中，是否有任意两个互不相交？是否有某些集合是其他集合的子集？ \
+    (a) $A inter B$。 \
+    (b) $(A union B) without C$。 \
+    (c) $A union (B without C)$。
+
+  + 设 $A = {"United States", "Germany", "China", "Australia"}$，${"Germany",$ \
+    $"France", "India", "Brazil"}$ ，$C={x| x "是欧洲的国家"}$，列出下列各集合的元素。下面的集合中，是否有任意两个互不相交？是否有某些集合是其他集合的子集？ \
+    (a) $A union B$。 \
+    (b) $(A inter B) without C$。 \
+    (c) $(B inter C) without A$。
+
+  + 验证本节所述：$(A union B) without (A inter B)$ 与 $(A without B)union (B without A)$ 的文氏图都如@venn6 所示。
+
+  + 用文氏图验证下列恒等式： \
+    (a) $A without (A inter B)=A without B$。 \
+    (b) $A union (B inter C)=(A union B) inter (A union C)$。
+
+  + 通过写出（用逻辑符号表示）对象 $x$ 属于各集合的含义，然后使用逻辑等值式，来验证第 4 题中的恒等式。
+
+  + 用文氏图验证下列恒等式：
+    (a) $(A union B) without C=(A without C) union (B without C)$。 \
+    (b) $A union (B without C)=(A union B) without (C without A)$。
+
+  + 通过写出（用逻辑符号表示）对象 $x$ 属于各集合的含义，然后使用逻辑等值式，来验证第 6 题中的恒等式。
+
+  + 任选你喜欢的方法验证下列恒等式：
+    (a) $(A without B) inter C = (A inter C) without B$。
+    (b) $(A inter B) without B = emptyset$。
+    (c) $A without (A without B) = A inter B$。
+
+  + 对下列每一集合，用逻辑符号写出“对象 $x$ 属于该集合”的含义。然后通过判断哪些命题等价，确定这些集合中哪些必然相等。
+    (a) $(A without B) without C$。
+    (b) $A without (B without C)$。
+    (c) $(A without B) union (A inter C)$。
+    (d) $(A without B) inter (A without C)$。
+    (e) $A without (B union C)$。
+
+  + 本节已证明对任意集合 $A$ 与 $B$，有 $(A union B) without B subset.eq A$。
+    (a) 举出一对集合 $A$ 与 $B$ 的例子，使得 $(A union B) without B eq.not A$。
+    (b) 证明对所有集合 $A$ 与 $B$，恒有 $(A union B) without B = A without B$。
+
+  + 设 $A$ 与 $B$ 为任意集合。下列陈述是否总为真？若不，总有哪一方必为另一方的子集？$(A without B) union B = A$ 否则是否总等于 $A without B$ 或 $A union B$？请判断并说明理由。
+
+  + 本节宣称：无法用重叠圆画出四个集合的完整文氏图。 \
+    (a) 下图有什么问题？（提示：集合 $(A inter D) without (B union C)$ 在哪里？）
+    #figure(image("../image/venn9.svg", height: 13em))
+    (b) 你能否用圆以外的图形为四个集合画出文氏图？
+
+  + (a) 为集合 $(A union B) without C$ 和 $A union (B without C)$ 作文氏图。根据文氏图，你能得出哪一个集合必然是另一个的子集吗？ \
+    (b) 给出具体的集合 $A,B,C$ 的例子，使得 $(A union B) without C eq.not A union (B without C)$。
+
+  + 用文氏图说明对称差满足结合律；即对于任意集合 $A,B,C$，有$A^2 (B^2 C) = (A^2 B)^2 C.$
+
+  + 任意选用你喜欢的方法验证下列恒等式： \
+    (a) $(A^2 B) union C = (A union C)^2 (B without C).$ \
+    (b) $(A^2 B) inter C = (A inter C)^2 (B inter C).$ \
+    (c) $(A^2 B) without C = (A without C)^2 (B without C).$
+
+  + 任意选用你喜欢的方法验证下列恒等式： \
+    (a) $(A union B)^2 C = (A^2 C)^2 (B without A).$ \
+    (b) $(A inter B)^2 C = (A^2 C)^2 (A without B).$ \
+    (c) $(A without B)^2 C = (A^2 C)^2 (A inter B).$ \
+
+  + 填空使下列恒等式成立： \
+    (a) $(A^2 B) inter C = (C without A)^2 #h(1em) underline(#h(4em))$. \
+    (b) $C without (A^2 B) = (A inter C)^2 #h(1em) underline(#h(4em))$. \
+    (c) $(B without A)^2 C = (A^2 C)^2 #h(1em) underline(#h(4em))$.
+]

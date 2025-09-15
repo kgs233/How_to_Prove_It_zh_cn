@@ -48,6 +48,19 @@
   #v(-1em)
 ]
 
+#let theorem(name, body) = [
+  #set heading(numbering: numbly(
+    "{1}",
+    "{1}.{2}",
+    "定理 {1}.{2}.{3}.",
+  ))
+  === #name
+  #v(0.5em)
+  #body
+  #par()[#text()[#h(0.0em)]]
+  #v(-1em)
+]
+
 #let solution(body) = [
   #set par(first-line-indent: 0em)
   _解_

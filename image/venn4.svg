@@ -4,16 +4,16 @@
     <text x="10" y="30" style="font-family: STIX Two Math; font-size: 24px; font-style: italic; fill: black;font-weight: 600;">U</text>
     <defs>
         <mask id="amask">
-            <circle cx="160" cy="140" r="60" fill="white" />
-            <circle cx="240" cy="140" r="60" fill="black"/>
+            <circle cx="160" cy="140" r="70" fill="white" />
+            <circle cx="240" cy="140" r="70" fill="black"/>
         </mask>
     </defs>
     
-    <circle cx="160" cy="140" r="60" fill="gray" mask="url(#amask)"/>
+    <circle cx="160" cy="140" r="70" fill="gray" mask="url(#amask)"/>
 
-    <circle cx="160" cy="140" r="60" fill="none" stroke="black" stroke-width="2.5" />
-    <text x="145" y="60" style="font-family: STIX Two Math; font-size: 24px; font-style: italic; fill: black;font-weight: 580;">A</text>
+    <circle cx="160" cy="140" r="70" fill="none" stroke="black" stroke-width="2.5" />
+    <text x="145" y="70" style="font-family: STIX Two Math; font-size: 24px; font-style: italic; fill: black;font-weight: 580;">A</text>
     
-    <circle cx="240" cy="140" r="60" fill="none" stroke="black" stroke-width="2.5" />
-    <text x="230" y="60" style="font-family: STIX Two Math; font-size: 24px; font-style: italic; fill: black;font-weight: 580;">B</text>
+    <circle cx="240" cy="140" r="70" fill="none" stroke="black" stroke-width="2.5" />
+    <text x="230" y="70" style="font-family: STIX Two Math; font-size: 24px; font-style: italic; fill: black;font-weight: 580;">B</text>
 </svg>
