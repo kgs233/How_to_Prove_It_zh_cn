@@ -1,6 +1,4 @@
 #import "../lib.typ": *
-#import "@preview/cetz:0.4.0"
-#import "@preview/cetz-venn:0.1.4"
 
 == 集合运算
 假设 $A$ 是陈述 $P(x)$ 的真集，$B$ 是陈述 $Q(x)$ 的真集。那么，陈述 $P(x) and Q(x)$、$P(x) or Q(x)$ 和 $not P(x)$ 的真集分别是什么？为了回答这些问题，我们引入一些基本的集合运算。
@@ -66,11 +64,11 @@
   columns: (1fr, 1fr),
   column-gutter: 2em,
   row-gutter: 2em,
-  [#figure(image("../image/venn1.svg"), caption: [])<venn-none>],
-  [#figure(image("../image/venn2.svg"), caption: [$A inter B$])<venn-inter>],
+  [#figure(image("../../image/venn1.svg"), caption: [])<venn-none>],
+  [#figure(image("../../image/venn2.svg"), caption: [$A inter B$])<venn-inter>],
 
-  [#figure(image("../image/venn3.svg"), caption: [$A union B$])<venn-union>],
-  [#figure(image("../image/venn4.svg"), caption: [$A without B$])<venn-without>],
+  [#figure(image("../../image/venn3.svg"), caption: [$A union B$])<venn-union>],
+  [#figure(image("../../image/venn4.svg"), caption: [$A without B$])<venn-without>],
 )
 
 下面是一个文氏图如何帮助我们理解集合运算的例子。在例 1.4.2 中，对于某个特定的 $A$ 和 $B$，集合 $(A union B) without (A inter B)$ 和 $(A without B) union (B without A)$ 结果相等。通过为这两个集合分别画文氏图，你会发现这并不是巧合。两个文氏图看起来都像@venn-symme。
@@ -79,7 +77,7 @@ $A^2 B = (A without B) union (B without A) = (A union B) without (A inter B)$ �
 在本节的后面，我们还会看到另一种解释，说明为什么这些集合始终相等。
 
 #figure(
-  image("../image/venn5.svg", height: 11em, width: 17.6em),
+  image("../../image/venn5.svg", height: 11em, width: 17.6em),
   caption: [$(A without B) union (B without A) = (A union B) without (A inter B)$],
 )<venn-symme>
 
@@ -134,7 +132,7 @@ $A inter (B union C) = (A inter B) union (A inter C)$。
 虽然确实可以为三个以上的集合画文式图，但这种情况很少见，因为无法用相互重叠的圆来完成。关于三个以上集合的文式图，请参见习题 12。
 
 #figure(
-  image("../image/venn6.svg", height: 16em, width: auto),
+  image("../../image/venn6.svg", height: 16em, width: auto),
   caption: [$A inter (B union C) = (A inter B) union (A inter C)$],
 )<venn6>
 
@@ -206,8 +204,8 @@ $
   columns: (1fr, 1fr),
   column-gutter: 2em,
   row-gutter: 2em,
-  [#figure(image("../image/venn7.svg"), caption: [])<venn-subset>],
-  [#figure(image("../image/venn8.svg"), caption: [$A inter B$])<venn-notsubset>],
+  [#figure(image("../../image/venn7.svg"), caption: [])<venn-subset>],
+  [#figure(image("../../image/venn8.svg"), caption: [$A inter B$])<venn-notsubset>],
 )
 
 正如我们之前推导过一些恒等式，说明某些集合恒等相等，有时我们也可以证明某些集合恒不相交，或者一个集合恒为另一个集合的子集。
@@ -284,7 +282,7 @@ $
 
   + 本节宣称：无法用重叠圆画出四个集合的完整文氏图。 \
     (a) 下图有什么问题？（提示：集合 $(A inter D) without (B union C)$ 在哪里？）
-    #figure(image("../image/venn9.svg", height: 13em))
+    #figure(image("../../image/venn9.svg", height: 13em))
     (b) 你能否用圆以外的图形为四个集合画出文氏图？
 
   + (a) 为集合 $(A union B) without C$ 和 $A union (B without C)$ 作文氏图。根据文氏图，你能得出哪一个集合必然是另一个的子集吗？ \
