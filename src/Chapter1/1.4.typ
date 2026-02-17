@@ -72,8 +72,8 @@
 )
 
 下面是一个文氏图如何帮助我们理解集合运算的例子。在例 1.4.2 中，对于某个特定的 $A$ 和 $B$，集合 $(A union B) without (A inter B)$ 和 $(A without B) union (B without A)$ 结果相等。通过为这两个集合分别画文氏图，你会发现这并不是巧合。两个文氏图看起来都像@venn-symme。
-因此，这两个集合无论在什么情况下都相等，因为它们始终表示这样一个集合：属于 $A$ 或 $B$，但不同时属于二者的元素。这个集合叫做 _对称差（symmetric difference）_，记作 $A Delta B$#footnote[译者注：有的时候会记作 $A plus.o B$]。换句话说，
-$A Delta B = (A without B) union (B without A) = (A union B) without (A inter B)$ 。
+因此，这两个集合无论在什么情况下都相等，因为它们始终表示这样一个集合：属于 $A$ 或 $B$，但不同时属于二者的元素。这个集合叫做 _对称差（symmetric difference）_，记作 $A triangle.stroked.small.t B$#footnote[译者注：有的时候会记作 $A plus.o B$]。换句话说，
+$A triangle.stroked.small.t B = (A without B) union (B without A) = (A union B) without (A inter B)$ 。
 在本节的后面，我们还会看到另一种解释，说明为什么这些集合始终相等。
 
 #figure(
@@ -280,7 +280,7 @@ $
 
   + 设 $A$ 与 $B$ 为任意集合。下列陈述是否总为真？若不，总有哪一方必为另一方的子集？$(A without B) union B = A$ 否则是否总等于 $A without B$ 或 $A union B$？请判断并说明理由。
 
-  + 本节宣称：无法用重叠圆画出四个集合的完整文氏图。 \
+  + 本题宣称：无法用重叠圆画出四个集合的完整文氏图。 \
     (a) 下图有什么问题？（提示：集合 $(A inter D) without (B union C)$ 在哪里？）
     #figure(image("../../image/venn9.svg", height: 13em))
     (b) 你能否用圆以外的图形为四个集合画出文氏图？
@@ -288,20 +288,20 @@ $
   + (a) 为集合 $(A union B) without C$ 和 $A union (B without C)$ 作文氏图。根据文氏图，你能得出哪一个集合必然是另一个的子集吗？ \
     (b) 给出具体的集合 $A,B,C$ 的例子，使得 $(A union B) without C eq.not A union (B without C)$。
 
-  + 用文氏图说明对称差满足结合律；即对于任意集合 $A,B,C$，有$A Delta (B Delta C) = (A Delta B) Delta C.$
+  + 用文氏图说明对称差满足结合律；即对于任意集合 $A,B,C$，有$A triangle.stroked.small.t (B triangle.stroked.small.t C) = (A triangle.stroked.small.t B) triangle.stroked.small.t C.$
 
   + 任意选用你喜欢的方法验证下列恒等式： \
-    (a) $(A Delta B) union C = (A union C) Delta (B without C).$ \
-    (b) $(A Delta B) inter C = (A inter C) Delta (B inter C).$ \
-    (c) $(A Delta B) without C = (A without C) Delta (B without C).$
+    (a) $(A triangle.stroked.small.t B) union C = (A union C) triangle.stroked.small.t (B without C).$ \
+    (b) $(A triangle.stroked.small.t B) inter C = (A inter C) triangle.stroked.small.t (B inter C).$ \
+    (c) $(A triangle.stroked.small.t B) without C = (A without C) triangle.stroked.small.t (B without C).$
 
   + 任意选用你喜欢的方法验证下列恒等式： \
-    (a) $(A union B) Delta C = (A Delta C) Delta (B without A).$ \
-    (b) $(A inter B) Delta C = (A Delta C) Delta (A without B).$ \
-    (c) $(A without B) Delta C = (A Delta C) Delta (A inter B).$ \
+    (a) $(A union B) triangle.stroked.small.t C = (A triangle.stroked.small.t C) triangle.stroked.small.t (B without A).$ \
+    (b) $(A inter B) triangle.stroked.small.t C = (A triangle.stroked.small.t C) triangle.stroked.small.t (A without B).$ \
+    (c) $(A without B) triangle.stroked.small.t C = (A triangle.stroked.small.t C) triangle.stroked.small.t (A inter B).$ \
 
   + 填空使下列恒等式成立： \
-    (a) $(A Delta B) inter C = (C without A) Delta underline(#h(4em))$. \
-    (b) $C without (A Delta B) = (A inter C) Delta underline(#h(4em))$. \
-    (c) $(B without A) Delta C = (A Delta C) Delta underline(#h(4em))$.
+    (a) $(A triangle.stroked.small.t B) inter C = (C without A) triangle.stroked.small.t underline(#h(4em))$. \
+    (b) $C without (A triangle.stroked.small.t B) = (A inter C) triangle.stroked.small.t underline(#h(4em))$. \
+    (c) $(B without A) triangle.stroked.small.t C = (A triangle.stroked.small.t C) triangle.stroked.small.t underline(#h(4em))$.
 ]
