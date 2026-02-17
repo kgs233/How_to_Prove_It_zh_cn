@@ -81,7 +81,7 @@ $A Delta B = (A without B) union (B without A) = (A union B) without (A inter B)
   caption: [$(A without B) union (B without A) = (A union B) without (A inter B)$],
 )<venn-symme>
 
-#h(2em)现在让我们回到本节开头的问题。若 $A$ 是陈述 $P(x)$ 的真集，而 $B$ 是陈述 $Q(x)$ 的真集，那么，正如我们在上一节看到的，$x ∈ A$ 与 $P(x)$ 的含义相同，而 $x ∈ B$ 与 $Q(x)$ 的含义相同。因此，$P(x) ∧ Q(x)$ 的真集是 ${x | P(x) ∧ Q(x)} = {x | x ∈ A ∧ x ∈ B} = A ∩ B$。这是合理的。它只是表明 $P(x) ∧ Q(x)$ 的真集由那些 $P(x)$ 和 $Q(x)$ 的真集共有的元素组成——换句话说，就是使得 $P(x)$ 与 $Q(x)$ 同时为真的 $x$ 的取值。我们已经看到过一个这样的例子。在例 1.4.3 中，集合 $A$ 和 $B$ 分别是陈述“$x$ 是男人”和“$x$ 有棕色头发”的真集，而 $A ∩ B$ 恰好是陈述“$x$ 是男人且 $x$ 有棕色头发”的真集。
+#h(2em)现在让我们回到本节开头的问题。若 $A$ 是陈述 $P(x)$ 的真集，而 $B$ 是陈述 $Q(x)$ 的真集，那么，正如我们在上一节看到的，$x in A$ 与 $P(x)$ 的含义相同，而 $x in B$ 与 $Q(x)$ 的含义相同。因此，$P(x) and Q(x)$ 的真集是 ${x | P(x) and Q(x)} = {x | x in A and x in B} = A ∩ B$。这是合理的。它只是表明 $P(x) and Q(x)$ 的真集由那些 $P(x)$ 和 $Q(x)$ 的真集共有的元素组成——换句话说，就是使得 $P(x)$ 与 $Q(x)$ 同时为真的 $x$ 的取值。我们已经看到过一个这样的例子。在例 1.4.3 中，集合 $A$ 和 $B$ 分别是陈述“$x$ 是男人”和“$x$ 有棕色头发”的真集，而 $A ∩ B$ 恰好是陈述“$x$ 是男人且 $x$ 有棕色头发”的真集。
 
 类似的推理表明，$P(x) or Q(x)$ 的真集是 $A union B$。
 要找到 $not P(x)$ 的真集，我们需要讨论论域 $U$。
@@ -301,7 +301,7 @@ $
     (c) $(A without B) Delta C = (A Delta C) Delta (A inter B).$ \
 
   + 填空使下列恒等式成立： \
-    (a) $(A Delta B) inter C = (C without A) Delta #h(1em) underline(#h(4em))$. \
-    (b) $C without (A Delta B) = (A inter C) Delta #h(1em) underline(#h(4em))$. \
-    (c) $(B without A) Delta C = (A Delta C) Delta #h(1em) underline(#h(4em))$.
+    (a) $(A Delta B) inter C = (C without A) Delta underline(#h(4em))$. \
+    (b) $C without (A Delta B) = (A inter C) Delta underline(#h(4em))$. \
+    (c) $(B without A) Delta C = (A Delta C) Delta underline(#h(4em))$.
 ]
