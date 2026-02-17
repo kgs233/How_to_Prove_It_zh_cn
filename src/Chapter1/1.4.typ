@@ -72,8 +72,8 @@
 )
 
 下面是一个文氏图如何帮助我们理解集合运算的例子。在例 1.4.2 中，对于某个特定的 $A$ 和 $B$，集合 $(A union B) without (A inter B)$ 和 $(A without B) union (B without A)$ 结果相等。通过为这两个集合分别画文氏图，你会发现这并不是巧合。两个文氏图看起来都像@venn-symme。
-因此，这两个集合无论在什么情况下都相等，因为它们始终表示这样一个集合：属于 $A$ 或 $B$，但不同时属于二者的元素。这个集合叫做 _对称差（symmetric difference）_，记作 $A^2 B$#footnote[译者注：在其它地方通常记作 $A Delta B$，图论的书中通常记作 $A plus.circle B$]。换句话说，
-$A^2 B = (A without B) union (B without A) = (A union B) without (A inter B)$ 。
+因此，这两个集合无论在什么情况下都相等，因为它们始终表示这样一个集合：属于 $A$ 或 $B$，但不同时属于二者的元素。这个集合叫做 _对称差（symmetric difference）_，记作 $A Delta B$#footnote[译者注：有的时候会记作 $A plus.o B$]。换句话说，
+$A Delta B = (A without B) union (B without A) = (A union B) without (A inter B)$ 。
 在本节的后面，我们还会看到另一种解释，说明为什么这些集合始终相等。
 
 #figure(
@@ -288,20 +288,20 @@ $
   + (a) 为集合 $(A union B) without C$ 和 $A union (B without C)$ 作文氏图。根据文氏图，你能得出哪一个集合必然是另一个的子集吗？ \
     (b) 给出具体的集合 $A,B,C$ 的例子，使得 $(A union B) without C eq.not A union (B without C)$。
 
-  + 用文氏图说明对称差满足结合律；即对于任意集合 $A,B,C$，有$A^2 (B^2 C) = (A^2 B)^2 C.$
+  + 用文氏图说明对称差满足结合律；即对于任意集合 $A,B,C$，有$A Delta (B Delta C) = (A Delta B) Delta C.$
 
   + 任意选用你喜欢的方法验证下列恒等式： \
-    (a) $(A^2 B) union C = (A union C)^2 (B without C).$ \
-    (b) $(A^2 B) inter C = (A inter C)^2 (B inter C).$ \
-    (c) $(A^2 B) without C = (A without C)^2 (B without C).$
+    (a) $(A Delta B) union C = (A union C) Delta (B without C).$ \
+    (b) $(A Delta B) inter C = (A inter C) Delta (B inter C).$ \
+    (c) $(A Delta B) without C = (A without C) Delta (B without C).$
 
   + 任意选用你喜欢的方法验证下列恒等式： \
-    (a) $(A union B)^2 C = (A^2 C)^2 (B without A).$ \
-    (b) $(A inter B)^2 C = (A^2 C)^2 (A without B).$ \
-    (c) $(A without B)^2 C = (A^2 C)^2 (A inter B).$ \
+    (a) $(A union B) Delta C = (A Delta C) Delta (B without A).$ \
+    (b) $(A inter B) Delta C = (A Delta C) Delta (A without B).$ \
+    (c) $(A without B) Delta C = (A Delta C) Delta (A inter B).$ \
 
   + 填空使下列恒等式成立： \
-    (a) $(A^2 B) inter C = (C without A)^2 #h(1em) underline(#h(4em))$. \
-    (b) $C without (A^2 B) = (A inter C)^2 #h(1em) underline(#h(4em))$. \
-    (c) $(B without A)^2 C = (A^2 C)^2 #h(1em) underline(#h(4em))$.
+    (a) $(A Delta B) inter C = (C without A) Delta #h(1em) underline(#h(4em))$. \
+    (b) $C without (A Delta B) = (A inter C) Delta #h(1em) underline(#h(4em))$. \
+    (c) $(B without A) Delta C = (A Delta C) Delta #h(1em) underline(#h(4em))$.
 ]
