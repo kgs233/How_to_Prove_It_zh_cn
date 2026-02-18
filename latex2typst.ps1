@@ -29,6 +29,7 @@ foreach ($file in $files) {
     $content = $content -replace '\\varnothing', 'emptyset'
     $content = $content -replace '\\subseteq', 'subset.eq'
 
+    $content = $content -replace '\\rightarrow', 'arrow'
 
     $content = $content -replace '\\mathbb{([A-Za-z])}', '$1$1'
     $content = $content -replace '\\text\{([^\}]*)\}', '"$1"'

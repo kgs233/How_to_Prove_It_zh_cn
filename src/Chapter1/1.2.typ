@@ -183,9 +183,14 @@ $not P$ 的真值表也很容易构造，因为要使 $not P$ 为真，$P$ 必�
 正如我们所见，如果令 $P$ 表示陈述“明天会下雨”，令 $Q$ 表示陈述“明天会下雪”，那么我们可以把这个论证符号化地表示如下：
 
 #box[
-  $P or Q$ \
-  $underline(not#h(0.1em)Q#h(1em))$ \
-  $therefore P$ #h(4em) （符号 #sym.therefore 代表所以）
+  #v-calc(
+    (
+      [$P or Q$], 
+      [$not Q$]
+    ),
+    [$therefore P$]
+  )
+  #v(-2em) #h(5em) （符号 #sym.therefore 代表所以）
 ]
 
 现在我们可以看到如何使用真值表来验证这个论证的有效性。@table1.6 展示了该论证的两个前提和结论的真值表。回想一下，我们决定如果前提不可能全部为真而结论却为假的话，就称该论证为有效。
@@ -222,11 +227,18 @@ $not P$ 的真值表也很容易构造，因为要使 $not P$ 为真，$P$ 必�
 #solution[
   + 如同例 1.1.3，我们令 $S$ 表示陈述“约翰很笨”，令 $L$ 表示陈述“约翰很懒”。那么该论证的形式为： \
     #box[
-      #h(2em)$(not S and L) or S$ \
-      #h(2em)$underline(S#h(4.8em))$ \
-      #h(2em)$therefore not L$
+      #move(dx:1.5em)[
+        #v-calc(
+          (
+            [$(not S and L) or S$],
+            [$S$]
+          ),
+          [$therefore not L$]
+        )
+      ]
     ]
-    #h(1em)现在我们为两个前提和结论制作真值表。（你应该推导出该表第三列的中间步骤，以确认其正确性。）
+    现在我们为两个前提和结论制作真值表。（你应该推导出该表第三列的中间步骤，以确认其正确性。）
+    #colbreak()
     #align(center)[
       #v(0.5em)
       #align(left)[#h(12.5em)前提#h(6.7em)结论]
@@ -245,11 +257,17 @@ $not P$ 的真值表也很容易构造，因为要使 $not P$ 为真，$P$ 必�
 
   + 令 $B$ 表示陈述“管家是无辜的”，$C$ 表示陈述“厨师是无辜的”，$L$ 表示陈述“管家在说谎”。那么该论证的形式为：
     #box[
-      #h(2em)$not (B and C)$ \
-      #h(2em)$underline(L or C#h(2.4em))$ \
-      #h(2em)$therefore not L or not B$
+      #move(dx: 1.5em)[
+        #v-calc(
+          (
+            [$not (B and C)$ ],
+            [$L or C$],
+          ),
+          [$therefore not L or not B$],
+        )
+      ]
     ]
-    #h(1em)下面是前提和结论的真值表：
+    下面是前提和结论的真值表：
     #align(center)[
       #v(0.5em)
       #align(left)[#h(12.5em)前提#h(8.5em)结论]

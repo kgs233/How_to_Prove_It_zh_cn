@@ -186,19 +186,18 @@ $
   caption: [],
 )<table1.7>
 
-#definition(
-  [假设 $A$ 和 $B$ 是集合。若 $A$ 的每个元素也是 $B$ 的元素，我们称 $A$ 是 $B$ 的子集。记号 $A subset.eq B$#footnote[$subset.eq$ 符号在一些地方还写作 $⫅$ 或者 $subset$，其中 $subset$ 可能会引起歧义，不过依照Unicode对这个符号解释，它应该是子集符号，又应为集合自己本身也是自己的子集，所以读者在大多数情况下都可以等同于前面两者] 表示 $A$ 是 $B$ 的子集。
-    如果 $A$ 和 $B$ 没有公共元素，我们称它们是不交的。注意，这等价于说它们的公共元素所成的集合是空集，换句话说，就是 $A inter B = emptyset$。],
-)[]
+#definition([])[
+  假设 $A$ 和 $B$ 是集合。若 $A$ 的每个元素也是 $B$ 的元素，我们称 $A$ 是 $B$ 的子集。记号 $A subset.eq B$#footnote[$subset.eq$ 符号在一些地方还写作 $⫅$ 或者 $subset$，其中 $subset$ 可能会引起歧义，不过依照Unicode对这个符号解释，它应该是子集符号，又应为集合自己本身也是自己的子集，所以读者在大多数情况下都可以等同于前面两者] 表示 $A$ 是 $B$ 的子集。
+  如果 $A$ 和 $B$ 没有公共元素，我们称它们是不交的。注意，这等价于说它们的公共元素所成的集合是空集，换句话说，就是 $A inter B = emptyset$。
+]
 #v(-1em)
-#example([假设
-  $A = {"red", "green"}$，
-  $B = {"red", "yellow", "green", "purple"}$，
-  $C = {"blue", "purple"}$。
+#example([])[假设 $A = {"red", "green"}, B = {"red", "yellow", "green", "purple"}, C = {"blue",$ $"purple"}$。
   那么，$A$ 的两个元素 red 和 green 也都在 $B$ 中，因此 $A subset.eq B$。
-  另外，$A inter C = emptyset$，所以 $A$ 和 $C$ 不交。])[]
+  另外，$A inter C = emptyset$，所以 $A$ 和 $C$ 不交。]
 
-如果我们知道 $A emptyset B$，或者知道 $A$ 和 $B$ 不交，那么我们可以用不同的文氏图来表示 $A$ 和 $B$，以反映这一点。@venn-subset 和@venn-notsubset 说明了这一点。
+#par(
+  first-line-indent: 0em,
+)[如果我们知道 $A emptyset B$，或者知道 $A$ 和 $B$ 不交，那么我们可以用不同的文氏图来表示 $A$ 和 $B$，以反映这一点。@venn-subset 和@venn-notsubset 说明了这一点。]
 
 #grid(
   columns: (1fr, 1fr),
