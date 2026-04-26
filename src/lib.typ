@@ -22,13 +22,13 @@
   text("  ")
 }
 
-#let definition(name, body) = [
+#let definition(name, label-name: none, body) = [
   #set heading(numbering: numbly(
     "{1}",
     "{1}.{2}",
     "定义 {1}.{2}.{3}.",
   ))
-  === #if name == [] { body } else { name }
+  === #if name == [] { body } else { name } #if label-name != none { label(label-name) }
   #if name != [] [
     #v(0.5em)
     #body

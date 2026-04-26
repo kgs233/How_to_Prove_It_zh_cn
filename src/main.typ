@@ -12,18 +12,17 @@
 
 #set text(
   font: (
-    "STIX Two Text",
+    (name: "STIX Two Text", covers: "latin-in-cjk"),
     "Noto Serif CJK SC"
   ),
   size: 11pt,
-  weight: "regular",
   lang: "zh",
 )
 
 #set par(justify: true, first-line-indent: 2em, leading: 1em)
 
 #show math.equation: set text(font: ("STIX Two Math", "STIX Two Text", "Noto Serif CJK SC"), size: 11pt, weight: "regular")
-#show emph: text.with(font: ("STIX Two Math", "STIX Two Text", "LXGW WenKai"), size: 11pt, weight: "regular", fill: luma(30), baseline: -0.02em)
+#show emph: text.with(font: ("STIX Two Text", "LXGW WenKai"), size: 11pt, weight: "regular", fill: luma(30), baseline: -0.02em)
 
 #show heading.where(level: 1): it => {
   set text(font: "Noto Sans SC", 1.5em, weight: "regular")
@@ -52,7 +51,6 @@
   },
   align: center + horizon,
 )
-
 
 #outline(title: "目录", depth: 2)
 #pagebreak()
@@ -162,7 +160,7 @@
   ]
 }
 
-#set strong(delta: 200)
+#show figure.caption : text.with(size: 10pt)
 #set-v-calc-style(padding: 0.5em)
 
-#include "Chapter1/chapter1.typ"
+#include "Body/body.typ"
