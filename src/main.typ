@@ -22,10 +22,10 @@
 #set par(justify: true, first-line-indent: 2em, leading: 1em)
 
 #show math.equation: set text(font: ("STIX Two Math", "STIX Two Text", "Noto Serif CJK SC"), size: 11pt, weight: "regular")
-#show emph: text.with(font: ("STIX Two Text", "LXGW WenKai"), size: 11pt, weight: "regular", fill: luma(30), baseline: -0.02em)
+#show emph: text.with(font: ((name: "STIX Two Text", covers: "latin-in-cjk"), "KaiTi_GB2312"), size: 11pt, weight: "regular", fill: luma(20))
 
 #show heading.where(level: 1): it => {
-  set text(font: "Noto Sans SC", 1.5em, weight: "regular")
+  set text(font: "Noto Sans CJK SC", 1.5em, weight: "regular")
   align(center)[#it]
   par()[#text()[#h(0.0em)]]
   if it.level == 1 { v(4em) }

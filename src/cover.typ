@@ -1,4 +1,4 @@
-#text(font: "Noto Sans SC")[
+#text(font: "Noto Sans CJK SC")[
   #align(left)[
     #v(1.5cm)
 
